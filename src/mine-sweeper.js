@@ -24,15 +24,23 @@ const { NotImplementedError } = require('../extensions/index.js');
  * ]
  */
 function minesweeper(arr) {
-//   for (let index = 0; index < arr.length; index++) {
-//     for (let i = 0; i < arr[index].length; i++) {
-//       if(arr[0][i] === true){
-//         arr[0][i + 1] = true
-//         arr[1][i] = true
-//       }
-//     }    
-// }
-// return arr
+  throw new NotImplementedError('Not implemented');
+  // remove line with error and write your code here
+  
+  for (let index = 0; index < arr.length; index++) {
+    for (let i = 0; i < arr[index].length; i++) {
+     
+      if(arr[0][i] === true){
+        arr[0][i+1] = 2
+        arr[1][i] = 2
+        arr[0][i] = 1
+      } else if (arr[index][i] === false | arr[index][i] === true){
+        arr[index][i] = 1
+      }
+      
+    }    
+}
+  return arr
 }
 
 module.exports = {
