@@ -12,16 +12,20 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function encodeLine(str) {
   let arr = str.split('')
-  let resStr = ''
-  for (let i = 0; i < arr.length; i++) {
+  var count = 1;
+  let res = ''
+
+  for (var i = 0; i < arr.length; ++i){
+     if (arr[i] === arr[i+1]) {
+      count++
+    } else {
+      res+= count + arr[i]
+      count = 1
+     }
   
-    if (arr[i] !== arr[i+1]) {
-      let res =  arr.filter(item => item === arr[i]).length
-      resStr += `${res}${arr[i]}`
-    }
   }
 
-  return resStr
+  return res.replace(/1/g, '')
 }
 
 module.exports = {
